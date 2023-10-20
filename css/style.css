@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+    /*Primary color*/
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);
+    --Soft-violet: hsl(277, 64%, 61%);
+    /* Neutral */
+    --Slightly-transparent-white-paragraph: hsla(0, 0%, 100%, 0.75);
+    --transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+body {    
+    background-color: var(--Very-dark-blue);
+}
+
+.container {
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    max-width: 1028px;
+    height: 446px;
+    display: flex;
+    background-color: var(--Dark-desaturated-blue);
+    border-radius: 8px;
+}
+
+.card-info {
+    max-width: 514px;
+    height: 100%;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    font-family: 'Inter', sans-serif;
+}
+
+.txt h1 {
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.txt h1 span {
+    color: var(--Soft-violet);
+}
+
+.txt p {
+    width: 364px;
+    font-size: 16px;
+    color: var(--transparent-white-stat-headings);
+    line-height: 25px;
+    margin-bottom: 50px;
+} 
+
+.card-dados {  
+    width: 364px;  
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-dados h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.companies p, .templates p, .queries p {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--transparent-white-stat-headings);
+}
+
+.companies, .templates, .queries {
+    width: 83px;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    width: 514px; 
+    height: 100%;  
+    background: url(/images/image-header-desktop.jpg) no-repeat; 
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 0px 8px 8px 0px;
+    position: relative;
+}
+
+.card-image::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: hsla(277, 64%, 61%, 0.5);
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+      
+    .cards {
+        width: 327px;
+        height: 780px;
+        flex-direction: column-reverse;
+   }
+
+   .card-info {
+        height: 540px;    
+        padding: 2em;
+        justify-content: start;
+        text-align: center;
+    }
+
+    .txt h1 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    
+    .txt p {
+        width: 100%;
+    }
+
+    .card-image {
+        width: 100%; 
+        height: 240px;
+        border-radius: 8px 8px 0px 0px;
+    }
+
+    .card-dados {  
+        width: 100%;  
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        gap: 20px;
+    }
+}
